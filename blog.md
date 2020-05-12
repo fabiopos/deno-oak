@@ -1,4 +1,4 @@
-# Deno
+# What is Deno
 
 ## Introduction
 
