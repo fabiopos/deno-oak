@@ -5,19 +5,22 @@
 ```
 "Dynamic Languages are the right tool for scientific computing", Ryan Dahl
 ```
-Deno is secure Typescript runtime on v8 written by [Ryan Dahl ](https://en.wikipedia.org/wiki/Ryan_Dahl) (creator of NodeJS) he introduced Deno in ["10 Things I Regret About Node.js"](https://www.youtube.com/watch?v=M3BM9TB-8yA) talk on 2018
+---
+Deno is secure Typescript runtime, written mainly by [Ryan Dahl ](https://en.wikipedia.org/wiki/Ryan_Dahl) (creator of NodeJS) he introduced Deno in ["10 Things I Regret About Node.js"](https://www.youtube.com/watch?v=M3BM9TB-8yA) talk on 2018
 
-Dahl talked about the design problems in NodeJS and his regrets about it like Secutiry, GYP, the mdoule system, extensions in files among others.
+Dahl talked about the design problems in NodeJS and his regrets about it, like Security, for example, Node doesn’t require access to write files and that becomes a problem when you are using a lot of plugins that are not yours. 
 
-The goals of Deno for Dalh were related to Security, he talked about the importance to allow the runtime flags to control the acesibility to the network or to the file system (--allow-net --allow-write).
+Just starting a project from scratch the design has two problems, the node_modules folder, which has a lot of folders storing dependencies for node and a centralized “package.json” file which is responsible for the register, maybe that’s no so sleek.
 
-The centralized module System in Node also represent a problem for managing packages, simplify the package manager taking advantage of ES modules is a better approach for Deno. No "node_modules" or "index.js" notion.
+Deno is looking to simplify the package manager taking advantage of ES modules - I think it is a better approach - just importing the modules - inspired by GoLang - from an URL. That means no more "node_modules" or "package.json".
 
-Deno is Typescript supported out ofthe box so we don't need to compile the .ts files beause it already support it.
+One of the goals of Deno - for Dalh - was related to Security, he talked about the importance to allow the runtime flags to control the accessibility to the network or to the file system (--allow-net --allow-write).
 
-Dalh mentioned his need to have an only Executable: "Ship a single executable with minimal linkage".
+Deno is Typescript supported out of the box so we don't need to compile the .ts files because it already supports it. But that doesn’t mean you cannot have javascript files in your project, that means if you want to start writing on Typescript, you are ready from the beginning.
 
-Miscelaneous at the top level also was mentioned as a Deno goal for example "await" at top-level and the use of console and browser semanthics is important for Deno.
+Dahl mentioned his need to have an only Executable: "Ship a single executable with minimal linkage". And that makes sense when you take a look fo some tools of Deno, like the [bundle tool](https://github.com/denoland/deno/blob/master/docs/tools/bundler.md), for example.
+
+Miscellaneous at the top level also was mentioned as a Deno goal, we can use "await" reserved word at top-level - is awesome - in this way you don’t need to wrap it into an async task.  Additionally most of the browser functionalities are present, just take a look at [this](https://doc.deno.land/https/github.com/denoland/deno/releases/latest/download/lib.deno.d.ts). 
 
 [According to Deno tweet](https://twitter.com/deno_land/status/1260199156037169153?s=20) on May 12nd his release is ready to go and it's good to take a look how it works and what Deno offer to us.
 
@@ -121,3 +124,7 @@ If you already have Deno installed you can use `deno upgrade` to upgrade.
 * [Deno 1.0: What you need to know
 ](https://blog.logrocket.com/deno-1-0-what-you-need-to-know/)  - blog post
 * [10 Things I Regret About Node.js ](https://www.youtube.com/watch?v=M3BM9TB-8yA) - conference
+
+### Credits
+
+This blog post is powered by [FullStackLabs](https://www.fullstacklabs.co/) you can find the most recent version there.
